@@ -44,7 +44,20 @@
 <script>
     $("document").ready(function(){
         
-        
+        //hide likes and eats
+        $('#pet_likes').hide();
+        $('#pet_eats').hide();
+
+        //onclick of feels, likes is shown
+        $('#pet_feels').click(function(){
+          $('#pet_likes').slideDown(200);
+        });
+
+        //onclick of likes, eats is shown
+        $('#pet_likes').click(function(){
+          $('#pet_eats').slideDown(200);
+        });
+
         $('#myForm').submit(function(e){
             e.preventDefault();//no need to submit as you'll be doing AJAX on this page
             let feels = $("input[name=feels]:checked").val();
